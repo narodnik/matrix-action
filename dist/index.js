@@ -1419,7 +1419,7 @@ function getBaseURL(server) {
         server = "https://" + server;
     }
     var serverURL = new URL(server);
-    return serverURL.protocol + "//" + serverURL.host + ":" + (serverURL.port || 8448);
+    return serverURL.protocol + "//" + serverURL.host;
 }
 function sendMessage() {
     return __awaiter(this, void 0, void 0, function () {
