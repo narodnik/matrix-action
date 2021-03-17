@@ -1438,26 +1438,26 @@ function sendMessage() {
     });
 }
 function getMatrixMessage() {
-    var message = status.toUpperCase() + " Build #" + runNumber + " received status " + status + "!";
-    var formattedBody = "<h1><span data-mx-color=\"" + getColor() + "\">" + status.toUpperCase() + "</span></h1>";
-    formattedBody += message ? "<strong>" + customMessage + "</strong><br>" : '';
-    formattedBody += "Build <a href=\"" + buildURL + "\"> " + repo + " #" + runNumber + " " + workflow + "</a> ";
-    switch (status.toLowerCase()) {
-        case 'success':
-            formattedBody += 'was successful!';
-            break;
-        case 'failure':
-            formattedBody += 'failed!';
-            break;
-        case 'cancelled':
-            formattedBody += 'was cancelled!';
-            break;
-        default:
-            core.warning("Unknown build status '" + status + "'");
-            formattedBody += "has status '" + status + "'";
-    }
-    formattedBody += "<br>triggered by <a href=\"" + actorURL + "\">" + actor + "</a> ";
-    return { formatted_body: formattedBody, body: message, format: 'org.matrix.custom.html', msgtype: 'm.text' };
+    //var message = status.toUpperCase() + " Build #" + runNumber + " received status " + status + "!";
+    //var formattedBody = "<h1><span data-mx-color=\"" + getColor() + "\">" + status.toUpperCase() + "</span></h1>";
+    //formattedBody += message ? "<strong>" + customMessage + "</strong><br>" : '';
+    //formattedBody += "Build <a href=\"" + buildURL + "\"> " + repo + " #" + runNumber + " " + workflow + "</a> ";
+    //switch (status.toLowerCase()) {
+    //    case 'success':
+    //        formattedBody += 'was successful!';
+    //        break;
+    //    case 'failure':
+    //        formattedBody += 'failed!';
+    //        break;
+    //    case 'cancelled':
+    //        formattedBody += 'was cancelled!';
+    //        break;
+    //    default:
+    //        core.warning("Unknown build status '" + status + "'");
+    //        formattedBody += "has status '" + status + "'";
+    //}
+    //formattedBody += "<br>triggered by <a href=\"" + actorURL + "\">" + actor + "</a> ";
+    return { formatted_body: customMessage, body: "", format: 'org.matrix.custom.html', msgtype: 'm.text' };
 }
 function logout() {
     return __awaiter(this, void 0, void 0, function () {
